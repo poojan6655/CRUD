@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html> <head> <h1> Edit Meeting </h1> 
+</head> 
+<body> 
+<form action="{% url 'update-emp-page' %}" class="form"  method="POST"> 
+    {% csrf_token %}
+<table> <tr> <td> companyname </td> <td> <input type="text" value="{{context.mid.companyname}}" name="companyname" readonly> </td> </tr>
+    <tr> <td> companyaddress </td> <td> <input type="textarea"  value="{{context.mid.companyaddress}}" name="companyaddress"> </td> </tr>
+    <tr> <td> contactno </td> <td> <input type="tel" name="contactno" value="{{context.mid.contactno}}"> </td> </tr>
+    <tr> <td> Contactperson </td> <td> <input type="text" name="Contactperson" value="{{context.mid.Contactperson}}"> </td> </tr>
+    <tr> <td> meetingpurpose </td> <td> <input type="text" name="meetingpurpose" value="{{context.mid.meetingpurpose}}"> </td> </tr>
+    <!-- <tr> <td> date </td> <td> <input type="" name="date"> </td> </tr> -->
+    <label for="birthdaytime"> (date and time):</label>
+    <input type="datetime-local" id="birthdaytime" name="date" value="{{context.mid.date}}"> 
+    <tr> <td> comments </td> <td> <input type="textarea" name="comments" value="{{context.mid.comments}}"> </td> </tr></n>
+    
+
+
+
+
+    <button type="submit">Confirm</button> 
+     <!-- <tr> <td> Password: </td> <td> <input type=”Password” name=””> </td> </tr> </table>  -->
+
+
+
+
+    
+</form> 
+</body> 
+</html>

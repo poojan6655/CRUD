@@ -1,0 +1,116 @@
+
+
+
+    {% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Our Company</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Register Template</title>
+  <link href="https://fonts.googleapis.com/css?family=Karla:400,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.8.95/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{% static 'myapp/assets/css/home-admin.css' %}">
+  
+</head>
+
+<body>
+
+  <h1>Welcome to {{context.sid.name}}</h1>
+  <h2 style="align-content: flex-end;"><button><a href="{% url 'logout-page' %}">logout</a></button></h2>
+  <h2 style="align-content: flex-end;"><button><a href="{% url 'create-meeting-page' %}">creat Meeting</a></button></h2>
+
+  <!-- <p>Pages (HTML)</p>
+  <p>Style Sheets (CSS)</p>
+  <p>Computer Code (JavaScript)</p>
+  <p>Live Data (Files and Databases)</p> -->
+
+
+  
+<table style="border: 1px solid black ; border-spacing: 10px;">
+    <tr>
+        <th>sr no</th>
+        <th>C Name</th>
+        <th>C Address</th>
+        <th>C Dtails</th>
+        <th>Contact Peron Name</th>
+        <th>Date Time</th>
+        <th>Comments</th>
+        <th colspan="2">action</th>
+        <!-- <th><button><a href="{% url 'logout-page' %}">logout</a></button></th> -->
+    </tr>
+    {% for i in context.mid %}
+    <tr>
+        <td>{{i.companyname}}</td>
+        <td>{{i.companyaddress}}</td>
+        <td>{{i.contactno}}</td>
+        <td>{{i.Contactperson}}</td>
+        <td>{{i.meetingpurpose}}</td>
+        <td>{{i.date}}</td>
+        <td>{{i.comments}}</td>
+        <td><button><a href="{% url 'edit-page' pk=i.id %}">edit</a></button></td>
+        <td><button><a href="{% url 'delete-page' pk=i.id %}">delete</a></button></td>
+    </tr>
+    {% endfor %}
+</table>
+
+<!-- 
+p>Sort Table Rows by Clicking on the Table Headers - Ascending and Descending (jQuery)</p>
+<div class="container" >
+	
+	<div class="table" style="border-spacing: 25px; " >
+		<div class="table-header" style="border-spacing: 25px; ">
+			<div class="header__item"><a id="name" class="filter__link" href="#">Sr NO.</a></div>
+			<div class="header__item"><a id="wins" class="filter__link filter__link--number" href="#">Company Name</a></div>
+			<div class="header__item"><a id="draws" class="filter__link filter__link--number" href="#">Company Address</a></div>
+      <div class="header__item"><a id="draws" class="filter__link filter__link--number" href="#">Company Details</a></div>
+			<div class="header__item"><a id="losses" class="filter__link filter__link--number" href="#">Company Person Name</a></div>
+			<div class="header__item"><a id="total" class="filter__link filter__link--number" href="#">Date time</a></div>
+      <div class="header__item"><a id="total" class="filter__link filter__link--number" href="#">Comments</a></div>
+      <div class="header__item"><a id="total" class="filter__link filter__link--number" href="#">Edit</a></div>
+      <div class="header__item"><a id="total" class="filter__link filter__link--number" href="#">Delete</a></div>
+		</div>
+		<div class="table-content">	
+      {% for i in context.mid %}
+			<div class="table-row">		
+				<div class="table-data">{{i.companyname}}</div>
+				<div class="table-data">{{i.companyaddress}}</div>
+				<div class="table-data">{{i.contactno}}</div>
+				<div class="table-data">{{i.Contactperson}}</div>
+				<div class="table-data">{{i.meetingpurpose}}</div>
+        <div class="table-data">{{i.date}}</div>
+        <div class="table-data">{{i.comments}}</div>
+        <div class="table-data"><button><a href="{% url 'edit-page' pk=i.id %}">edit</a></button></div>
+        <div class="table-data"><button><a href="{% url 'delete-page' pk=i.id %}">delete</a></button></div>
+			</div>
+      {% endfor %}
+			<div class="table-row">
+				<div class="table-data">Dick</div>
+				<div class="table-data">1</div>
+				<div class="table-data">1</div>
+				<div class="table-data">2</div>
+				<div class="table-data">3</div>
+			</div>
+			<div class="table-row">
+				<div class="table-data">Harry</div>
+				<div class="table-data">0</div>
+				<div class="table-data">2</div>
+				<div class="table-data">2</div>
+				<div class="table-data">2</div>
+			</div>
+		</div>	
+	</div>
+</div> -->
+<section>
+
+
+
+
+<!-- <script src="{% static 'myapp/assets/js/home-admin.js' %}"></script> -->
+</body>
+</html> 
+

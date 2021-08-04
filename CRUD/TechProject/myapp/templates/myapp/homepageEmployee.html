@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Our Company</title>
+</head>
+
+<body>
+
+  <h1>Welcome to {{context.sid.name}}</h1>
+  <h2 style="align-content: flex-end;"><button><a href="{% url 'logout-page' %}">logout</a></button></h2>
+  <!-- <h2 style="align-content: flex-end;"><button><a href="{% url 'create-meeting-page' %}">creat Meeting</a></button></h2> -->
+
+  <!-- <p>Pages (HTML)</p>
+  <p>Style Sheets (CSS)</p>
+  <p>Computer Code (JavaScript)</p>
+  <p>Live Data (Files and Databases)</p> -->
+
+
+  
+<table style="border: 1px solid black ; border-spacing: 10px;">
+    <tr>
+        <th>sr no</th>
+        <th>C Name</th>
+        <th>C Address</th>
+        <th>C Dtails</th>
+        <th>Contact Peron Name</th>
+        <th>Date Time</th>
+        <th>Comments</th>
+        <th colspan="2">action</th>
+        <!-- <th><button><a href="{% url 'logout-page' %}">logout</a></button></th> -->
+    </tr>
+    {% for i in context.mid %}
+    <tr>
+        <td>{{i.companyname}}</td>
+        <td>{{i.companyaddress}}</td>
+        <td>{{i.contactno}}</td>
+        <td>{{i.Contactperson}}</td>
+        <td>{{i.meetingpurpose}}</td>
+        <td>{{i.date}}</td>
+        <td>{{i.comments}}</td>
+        <td><button><a href="{% url 'edit-emp-page' pk=i.id %}">edit</a></button></td>
+        <td><button><a href="{% url 'delete-emp-page' pk=i.id %}">delete</a></button></td>
+    </tr>
+    {% endfor %}
+</table>
+
+</body>
+</html> 
+
+
+
+
+
